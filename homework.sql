@@ -29,24 +29,23 @@ FROM payment
 WHERE amount > 6.99
 ORDER BY payment_id ASC;
 
---- will try with WHERE IN subquery
-
-
---- shows all customers with payments above 6.99 but I want to show payments
-
-
--- try JOIN
-SELECT customer.customer_id, first_name, last_name
+--- will need to do join to show first_name, last_name, and payments above 6.99
+SELECT DISTINCT first_name, last_name, payment_id, amount
 FROM customer
 INNER JOIN payment
 ON customer.customer_id = payment.customer_id
-WHERE amount > 6.99;
+WHERE amount > 6.99
+ORDER BY first_name;
+--- added distinct to filter out duplicate names
+--- still shows duplicate names for each individual amount greater than 6.99
+
+--- Answer: run query
 
 
 -- 3. Show all customers names who have made payments over $175(use
 -- subqueries)
 
---- First way ---
+--- without subquery ---
 SELECT customer_id, SUM(amount)
 FROM payment
 GROUP BY customer_id
@@ -63,7 +62,7 @@ WHERE customer_id IN(
     HAVING SUM(amount) > 175
 );
 
---- Answer: 
+--- Answer: There are 135 people who've made payments over $175
 
 
 
@@ -140,7 +139,7 @@ FROM inventory; --- multiple inventory ids associated with same film id
 --- columns we want are rating and # of movies
 
 
---- Answer: 
+--- Answer: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 -- 7.Show all customers who have made a single payment above $6.99 (Use Subqueries)
