@@ -139,7 +139,7 @@ FROM inventory; --- multiple inventory ids associated with same film id
 --- columns we want are rating and # of movies
 
 
---- Answer: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+--- Answer: PG-13 has 223, NC-17 has 209, R has 196, PG has 194, G has 178
 
 
 -- 7.Show all customers who have made a single payment above $6.99 (Use Subqueries)
