@@ -97,11 +97,12 @@ ORDER BY COUNT(rental_id) DESC;
 --- shows that staff 1 has 8040 rental transations and staff 2 has 8004 transactions
 
 --- try INNER JOIN
-SELECT first_name, last_name
+SELECT first_name
 FROM staff
 INNER JOIN rental
 ON staff.staff_id = rental.staff_id
-ORDER BY COUNT(rental_ID) DESC; --- doesn't work
+GROUP BY staff.first_name
+ORDER BY COUNT(rental_ID) DESC;
 
 --- try subquery
 SELECT first_name, last_name
