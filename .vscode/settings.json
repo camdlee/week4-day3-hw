@@ -1,0 +1,21 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "thieves-join",
+            "connectString": "postgres://xlssbeyn:sXNcrKwZDzWk22ZhPvwLephCoAaAfAW_@suleiman.db.elephantsql.com/xlssbeyn"
+        },
+        {
+            "previewLimit": 50,
+            "server": "li2283-18.members.linode.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "test_db",
+            "password": "CodingTemple4L..",
+            "database": "test_db",
+            "username": "postgres"
+        }
+    ]
+}
